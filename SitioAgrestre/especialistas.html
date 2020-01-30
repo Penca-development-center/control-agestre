@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Especialistas</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<style type="text/css">
+		.horizontal{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.vertical{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-top: 15px;
+		}
+		.vertical *{
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		#btnConvertir{
+			display: none;
+		}
+	</style>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="utf-8">
+	<script type="text/javascript" src="javascript/script.js"></script>
+	<script src="javascript/jquery-2.2.4.js"></script>
+	<script lang="javascript" src="javascript/jspdf.min.js"></script>
+	<script type="text/javascript" language="javascript" src="javascript/generarPDF.js"></script>
+	<script type="text/javascript" language="javascript" src="javascript/html2canvas.min.js"></script>
+</head>
+<body>
+	<header id="header">
+		<img id="logotipo" src="imagenes/logo1.png">
+		<h1>Control Agrestre</h1>
+		<img id="iconoMenu" src="imagenes/menuIcono.png">
+		<nav id="barraNav">
+			<ul>
+				<li><a href="agregarProductos.html">Agregar productos</a></li>
+				<li><a href="especialistas.html">Ver especialistas</a></li>
+				<li>Elemento x+2</li>
+				<li>Elemento x+3</li>
+				<li><a href="index.html">Salir</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="principal">
+		<h2>Lista de especialistas</h2>
+		<div class="horizontal">
+			<label for="columnas">Cant de columnas:</label>
+			<input type="number" id="columnas">
+			<label for="filas">Cant de filas:</label>
+			<input type="number" id="filas">
+		</div>
+		<script type="text/javascript">
+			function generarTabla(){
+				var columnas=document.getElementById('columnas')
+				var filas=document.getElementById('filas')
+				var cuerpo=document.createElement("tbody");
+				for (var i = 0; i < filas.value; i++) {
+					var fila=document.createElement("tr")
+					for (var j = 0; j < columnas.value; j++) {
+						var celda=document.createElement("td")
+						var aleatorio=Math.floor(Math.random()*8)
+						var contenido=document.createTextNode(`${aleatorio}`)
+						celda.appendChild(contenido)
+						fila.appendChild(celda)
+					}
+				cuerpo.appendChild(fila)
+				}
+				var tabla=document.getElementById("tabla")
+				tabla.appendChild(cuerpo)
+				document.getElementById('btnConvertir').style.display="block"
+			}
+		</script>
+		<div class="vertical">
+			<button id="btnGenerarTabla" onclick="generarTabla()">Generar tabla</button>
+			<div id="contenedorTabla" class="horizontal">
+				<table id="tabla">
+			
+				</table>
+			</div>
+			<button id="btnConvertir" onclick="createPDF()">Convertir PDF</button>
+		</div>
+	</section>
+</body>
+</html>

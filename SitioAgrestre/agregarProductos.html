@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agregar Productos</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script type="text/javascript" src="javascript/script.js"></script>
+	<script src="javascript/jquery-2.2.4.js"></script>
+	<script lang="javascript" src="javascript/xlsx.full.min.js"></script>
+	<!--<script lang="javascript" src="javascript/jspdf.min.js"></script>-->
+</head>
+<body>
+	<header id="header">
+		<img id="logotipo" src="imagenes/logo1.png">
+		<h1>Control Agrestre</h1>
+		<img id="iconoMenu" src="imagenes/menuIcono.png">
+		<nav id="barraNav">
+			<ul>
+				<li><a href="agregarProductos.html">Agregar productos</a></li>
+				<li>Elemento x+1</li>
+				<li>Elemento x+2</li>
+				<li>Elemento x+3</li>
+				<li><a href="index.html">Salir</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="principal">
+		<h2>Agregar productos</h2>
+		<div class="centrarContenido">
+			<p>Ingrese el archivo excel del cual desea obtener los productos</p>
+			<input type="file" id="archivo">
+		</div>
+		<div class="centrarContenido" id="contenedorTabla">
+			
+		</div>
+		<script type="text/javascript">
+			function convertirPDF(){
+				alert('hola')
+				var doc=new jsPDF()
+				doc.fromHTML($('#contenedorTabla').get(0),20,20,{'width':500})
+				doc.save('prueba.pdf')
+			}
+		</script>
+		<button onclick="convertirPDF()" id="btnConvertir">Convertir a PDF</button>
+	</section>
+</body>
+</html>

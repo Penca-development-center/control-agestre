@@ -1,0 +1,172 @@
+body{
+	--main-bg-color:#132C2C;
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	background-image: url("../imagenes/campo1.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+ul,ol{
+	list-style: none;
+}
+table{
+	border-collapse: collapse;
+}
+td{
+	border: 1px solid black;
+}
+header{
+	background-color: var(--main-bg-color);
+	padding: 0.5em;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: auto;
+}
+header #logotipo{
+	max-width: 10%;
+	height: auto;
+}
+header h1{
+	margin: 0;
+	width: 80%;
+	font-size: 2em;
+	color: white;
+	text-align: left;
+}
+header #iconoMenu{
+	max-width: 5%;
+	height: auto;
+}
+#barraNav{
+	display: none;
+	background-color: var(--main-bg-color);
+	color: white;
+	width: 22.5%;
+}
+#barraNav ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin:0;
+	padding: 0;
+	width: 100%;
+}
+#barraNav ul li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 2.5em;
+	cursor: pointer;
+}
+#barraNav ul li:hover{
+	background-color: rgba(240,240,240,0.3);
+}
+#barraNav ul li a{
+	display: block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+
+#principal{
+	font-size: 1em;
+	background-color: rgba(178,223,219,0.3);
+	width: 80%;
+	height: 70%;
+	box-sizing: border-box;
+	margin: 0 auto;
+	margin-top: 15px;
+	padding:5px;
+	overflow: scroll;
+}
+#principal h2{
+	font-size: 2em;
+	width: 100%;
+	text-align: center;
+}
+.centrarContenido{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+input[type="file"]{
+	max-width: 75%;
+	font-size: 1em;
+}
+#contenedorTabla{
+	font-size: 1.5em;
+	padding: 10px;
+	width: 100%;
+}
+/*Media Queries*/
+
+@media (min-width: 1024px){
+	body{
+		font-size: 18px;
+	}
+}
+
+
+@media (max-width: 767px){
+	body{
+		font-size: 18px;
+	}
+	header #logotipo{
+		max-width: 20%;
+		width: 15%;
+		height: auto;
+	}
+	header h1{
+		width: 75%;
+	}
+}
+
+
+@media (max-width: 480px){
+	body{
+		font-size: 12px;
+	}
+	header #logotipo{
+		max-width: 25%;
+		width: 20%;
+		height: auto;
+	}
+	header h1{
+		width: 60%;
+	}
+	header #iconoMenu{
+		max-width: 15%;
+		width: 10%;
+		height: auto;
+	}
+}
+
+
+@media (max-width: 320px){
+	body{
+		font-size: 8px;
+	}
+	header #logotipo{
+		max-width: 25%;
+		width: 20%;
+		height: auto;
+	}
+	header h1{
+		width: 60%;
+	}
+	header #iconoMenu{
+		max-width: 15%;
+		width: 10%;
+		height: auto;
+	}
+}
