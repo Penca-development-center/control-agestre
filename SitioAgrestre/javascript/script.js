@@ -1,7 +1,7 @@
+/*var dataGrid=new DataGrid();*/
 window.onload=function(){
 	var iconoMenu=document.getElementById("iconoMenu")
 	iconoMenu.addEventListener("click",abrirMenu)
-	console.log(window)
 	$('#archivo').change(function(e){
 		var reader = new window.FileReader()
 		console.log(reader)
@@ -14,6 +14,35 @@ window.onload=function(){
 			$('#contenedorTabla')[0].innerHTML=contenidoHTML
 		}
 	})
+	var cabecera=['Nombre','Apellido','Edad','RFC','Localidad'];
+	var cuerpo=new Array(3);
+	cuerpo[0]=new this.Array(cabecera.length);
+	cuerpo[0][0]="Carlos";
+	cuerpo[0][1]="Mendoza";
+	cuerpo[0][2]=15;
+	cuerpo[0][3]="X";
+	cuerpo[0][4]="Estado Mexico";
+	cuerpo[1]=new this.Array(cabecera.length);
+	cuerpo[1][0]="Eric";
+	cuerpo[1][1]="Tellez";
+	cuerpo[1][2]=17;
+	cuerpo[1][3]="X";
+	cuerpo[1][4]="Hidalgo";
+	cuerpo[2]=new this.Array(cabecera.length);
+	cuerpo[2][0]="Eduardo";
+	cuerpo[2][1]="Aguirre";
+	cuerpo[2][2]=20;
+	cuerpo[2][3]="X";
+	cuerpo[2][4]="Guanajuato";
+	dataGrid.construirDataGrid('prueba',cabecera,cuerpo)
+	const tabla=document.getElementById('tabla');
+	const filas=tabla.children
+	for (let i = 0; i < filas.length; i++) {
+		const fila = filas[i];
+		fila.addEventListener("click",dataGrid.seleccionarFila.bind(dataGrid));
+		/*fila.addEventListener("dblclick",dataGrid.seleccionarCelda.bind(dataGrid));
+		fila.addEventListener("keydown",dataGrid.editarCelda.bind(dataGrid))*/
+	}
 }
 var x=0;
 function abrirMenu(){
@@ -25,12 +54,12 @@ function abrirMenu(){
 		menu.style.display="flex"
 		menu.style.flexdirection="column"
 		menu.style.position="absolute"
-		menu.style.right="0"
-		menu.style.top=`${altura}`
+		menu.style.top=`${altura}`;
+		menu.style.right="0";
 	}
 	else{
 		icono.setAttribute("src","imagenes/menuIcono.png")
-		menu.style.display="none"
+		menu.style.display='none';
 	}
 	x++;
 }

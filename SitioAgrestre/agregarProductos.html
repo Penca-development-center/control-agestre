@@ -4,10 +4,10 @@
 	<title>Agregar Productos</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="utf-8">
 	<script type="text/javascript" src="javascript/script.js"></script>
 	<script src="javascript/jquery-2.2.4.js"></script>
 	<script lang="javascript" src="javascript/xlsx.full.min.js"></script>
-	<!--<script lang="javascript" src="javascript/jspdf.min.js"></script>-->
 </head>
 <body>
 	<header id="header">
@@ -15,22 +15,22 @@
 		<h1>Control Agrestre</h1>
 		<img id="iconoMenu" src="imagenes/menuIcono.png">
 		<nav id="barraNav">
-			<ul>
+			<ul class="centradoVertical">
 				<li><a href="agregarProductos.html">Agregar productos</a></li>
-				<li>Elemento x+1</li>
-				<li>Elemento x+2</li>
-				<li>Elemento x+3</li>
+				<li><a href="asesores.html">Ver asesores</a></li>
+				<li><a href="agregarAgricultores.html">Agregar Agricultores</a></li>
+				<li><a>x+3</a></li>
 				<li><a href="index.html">Salir</a></li>
 			</ul>
 		</nav>
 	</header>
-	<section id="principal">
+	<section class="seccion unicaSeccion centradoVertical">
 		<h2>Agregar productos</h2>
-		<div class="centrarContenido">
+		<div class="">
 			<p>Ingrese el archivo excel del cual desea obtener los productos</p>
 			<input type="file" id="archivo">
 		</div>
-		<div class="centrarContenido" id="contenedorTabla">
+		<div class="centradoVertical" id="contenedorTabla">
 			
 		</div>
 		<script type="text/javascript">
@@ -41,7 +41,6 @@
 				doc.save('prueba.pdf')
 			}
 		</script>
-		<button onclick="convertirPDF()" id="btnConvertir">Convertir a PDF</button>
 	</section>
 </body>
 </html>

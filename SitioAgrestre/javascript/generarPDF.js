@@ -1,7 +1,3 @@
-window.onload=function(){
-	var boton=document.getElementById('btnConvertir')
-	boton.addEventListener('click',generarPDF)
-}
 function generarPDF(){
 	//Metodo con jspdf + html2canvas
 	/*
@@ -29,7 +25,7 @@ function createPDF() {
         var ventana = window.open('', '', 'height=700,width=700');
         ventana.document.write('<html><head>');
         ventana.document.write('<title>Especialistas</title>');
-        ventana.document.write(style);
+        ventana.document.write(estilos);
         ventana.document.write('</head>');
         ventana.document.write('<body>');
         ventana.document.write(tabla);

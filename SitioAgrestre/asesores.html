@@ -1,36 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Especialistas</title>
+	<title>Asesores</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<style type="text/css">
-		.horizontal{
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-		.vertical{
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			margin-top: 15px;
-		}
-		.vertical *{
-			margin-top: 5px;
-			margin-bottom: 5px;
-		}
-		#btnConvertir{
-			display: none;
-		}
-	</style>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="utf-8">
-	<script type="text/javascript" src="javascript/script.js"></script>
+	<script type="text/javascript" src="javascript/script.js" language="javascript"></script>
 	<script src="javascript/jquery-2.2.4.js"></script>
-	<script lang="javascript" src="javascript/jspdf.min.js"></script>
+	<!--<script lang="javascript" src="javascript/jspdf.min.js"></script>-->
 	<script type="text/javascript" language="javascript" src="javascript/generarPDF.js"></script>
-	<script type="text/javascript" language="javascript" src="javascript/html2canvas.min.js"></script>
+	<!--<script type="text/javascript" language="javascript" src="javascript/html2canvas.min.js"></script>-->
 </head>
 <body>
 	<header id="header">
@@ -38,18 +17,18 @@
 		<h1>Control Agrestre</h1>
 		<img id="iconoMenu" src="imagenes/menuIcono.png">
 		<nav id="barraNav">
-			<ul>
+			<ul class="centradoVertical">
 				<li><a href="agregarProductos.html">Agregar productos</a></li>
-				<li><a href="especialistas.html">Ver especialistas</a></li>
-				<li>Elemento x+2</li>
-				<li>Elemento x+3</li>
+				<li><a href="asesores.html">Ver asesores</a></li>
+				<li><a href="agregarAgricultores.html">Agregar agricultores</a></li>
+				<li><a href="">Elemento x+3</a></li>
 				<li><a href="index.html">Salir</a></li>
 			</ul>
 		</nav>
 	</header>
-	<section id="principal">
-		<h2>Lista de especialistas</h2>
-		<div class="horizontal">
+	<section class="seccion unicaSeccion">
+		<h2 class="titulos">Lista de especialistas</h2>
+		<div class="centradoHorizontal">
 			<label for="columnas">Cant de columnas:</label>
 			<input type="number" id="columnas">
 			<label for="filas">Cant de filas:</label>
@@ -76,14 +55,14 @@
 				document.getElementById('btnConvertir').style.display="block"
 			}
 		</script>
-		<div class="vertical">
+		<div class="centradoVertical">
 			<button id="btnGenerarTabla" onclick="generarTabla()">Generar tabla</button>
-			<div id="contenedorTabla" class="horizontal">
+			<div id="contenedorTabla" class="centradoHorizontal">
 				<table id="tabla">
 			
 				</table>
 			</div>
-			<button id="btnConvertir" onclick="createPDF()">Convertir PDF</button>
+			<button id="btnConvertir" class="inexistente" onclick="createPDF()">Convertir PDF</button>
 		</div>
 	</section>
 </body>

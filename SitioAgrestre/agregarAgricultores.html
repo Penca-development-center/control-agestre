@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Agregar agricultores</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="javascript/dataGrid.js" language="javascript"></script>
+	<script type="text/javascript" lang="javascript">
+		var dataGrid = new DataGrid();
+	</script>
+	<script type="text/javascript" src="javascript/script.js" language="javascript"></script>
+	<script src="javascript/jquery-2.2.4.js"></script>
+</head>
+
+<body>
+	<header id="header">
+		<img id="logotipo" src="imagenes/logo1.png">
+		<h1>Control Agrestre</h1>
+		<img id="iconoMenu" src="imagenes/menuIcono.png">
+		<nav id="barraNav">
+			<ul class="centradoVertical">
+				<li><a href="agregarProductos.html">Agregar productos</a></li>
+				<li><a href="asesores.html">Ver asesores</a></li>
+				<li><a href="agregarAgricultores.html">Agregar Agricultores</a></li>
+				<li><a href="">Elemento x+3</a></li>
+				<li><a href="index.html">Salir</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="seccion unicaSeccion centradoVertical">
+		<div id="contenedorForm" class="centradoVertical">
+			<label for="">Nombre</label>
+			<input type="text" id="nombre">
+			<label for="">Apellido</label>
+			<input type="text" id="apellido">
+			<label for="">Edad</label>
+			<input type="text" id="edad">
+			<label for="">RFC</label>
+			<input type="text" id="rfc">
+			<label for="">Localidad</label>
+			<input type="text" id="localidad">
+			<button id="btnActualizar" onclick="dataGrid.actualizarTabla()">Agregar Fila</button>
+		</div>
+		<div id="prueba">
+		</div>
+	</section>
+</body>
+
+</html>
